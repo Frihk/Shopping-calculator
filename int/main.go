@@ -5,21 +5,24 @@ import (
 	"bufio"
 	"os"
 	"strconv"
+	"ShoppingCalculator/helper"
+	"ShoppingCalculator/int/src"
 	// "int/src"
 	// "Shopping-calculator/int/src"
 )
 
-type Input struct {
-	ItemName string
-	NumberOfItems string 
-	PriceOfItem string
-	Cost string
 
-}
+// type Input struct {
+// 	ItemName string
+// 	NumberOfItems string 
+// 	PriceOfItem string
+// 	Cost string
+
+// }
   
 	 
 func main() {
-	var input Input
+	var input helper.Input
 	// ItemName.item := ""
 	// quantity := ""
 	// price := ""
@@ -50,6 +53,7 @@ func main() {
 	val := num * cash
 	input.Cost = strconv.FormatFloat(val, 'f', 2, 64) 
 	// }
+	k := src.Input(input)
 	// int := Input(input.ItemName, input.NumberOfItems, input.PriceOfItem, input.Cost)
-	fmt.Print(input)
+	fmt.Println(k[0])
 }

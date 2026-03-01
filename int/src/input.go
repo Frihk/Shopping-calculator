@@ -1,13 +1,13 @@
-package ShoppingCalc
+package src
 
-// type Input struct {
-// 	ItemName string
-// 	NumberOfItems int 
-// 	PriceOfItem float
+import (
+	"ShoppingCalculator/helper"
+)
 
-// }
-func Input(s, q, c string) ([][]slice, err){
-	cols := 3
-	
+
+func Input(s helper.Input) []helper.Input {
+	result := []helper.Input{}
+	result = append(result, s)
+	return result
 
 }
