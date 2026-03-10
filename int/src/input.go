@@ -28,22 +28,22 @@ func Input( ) []helper.Input {
 		fmt.Print("Quantiy of the item: ")
 		scanner.Scan()
 		quantity :=scanner.Text()
-		num, err := strconv.ParseFloat(quantity, 64)
+		num, err := strconv.Atoi(quantity)
 		if err != nil{
 			fmt.Println("Invalid Quantity")
 		}
-		input.NumberOfItems = quantity
+		input.NumberOfItems = num
 
 		fmt.Print("Price of the item: ")
 		scanner.Scan()
 		price := scanner.Text()
-		cash, err := strconv.ParseFloat(price, 64)
+		cash, err := strconv.ParseFloat(price, 32)
 			if err != nil {
 			fmt.Println("Invalid Price")
 		}
-		input.PriceOfItem = price
-		val := num * cash
-		input.Cost = strconv.FormatFloat(val, 'f', 2, 64) 
+		input.PriceOfItem = cash
+		val := float64(num) * cash
+		input.Cost =  float64(val)//strconv.FormatFloat(val, 'f', 2, 32) 
 		// }
 		k = append(k, input)
 		

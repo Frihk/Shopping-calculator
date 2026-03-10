@@ -6,7 +6,7 @@ import (
 	
 )
 
-
+var _ fmt.Formatter
 // type Input struct {
 // 	ItemName string
 // 	NumberOfItems string 
@@ -18,6 +18,5 @@ import (
 	 
 func main() {
 	list := src.Input()
-	
-	fmt.Println(list)
+	fmt.Println(src.Calc(list))
 }
