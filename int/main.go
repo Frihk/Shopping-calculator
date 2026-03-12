@@ -17,6 +17,6 @@ var _ fmt.Formatter
   
 	 
 func main() {
-	list := src.Input()
-	fmt.Println(src.Calc(list))
+	inputs,_ := src.Input()
+	fmt.Println(src.Calc(inputs))
 }

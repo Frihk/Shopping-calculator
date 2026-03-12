@@ -13,3 +13,9 @@ type Output struct {
 	TotalCost 		float64
 }
 
+type ProductStorage struct{
+	Name 	string `json:"name"`
+	Price 	float64	`json:"price"`
+	Freq 	int		`json:"freq"`
+}
+

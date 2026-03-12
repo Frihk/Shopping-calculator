@@ -10,9 +10,11 @@ import (
 )
 
 
-func Input( ) []helper.Input {
+func Input() ([]helper.Input, []helper.ProductStorage){
 	var input helper.Input
+	var store helper.ProductStorage
 	k := []helper.Input{}
+	x := []helper.ProductStorage{}
 
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -46,10 +48,15 @@ func Input( ) []helper.Input {
 		input.Cost =  float64(val)//strconv.FormatFloat(val, 'f', 2, 32) 
 		// }
 		k = append(k, input)
-		
+		store = helper.ProductStorage{
+			Name: input.ItemName,
+			Price: input.Cost,
+			Freq: 0,
+		}
+		x = append(x, store)
 	}
 		// int := Input(input.ItemName, input.NumberOfItems, input.PriceOfItem, input.Cost)
-		return k
+		return k, x
 
 }
 
