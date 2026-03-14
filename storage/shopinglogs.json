@@ -1,1 +1,22 @@
-[{"name":"mangoes","price":15,"freq":4},{"name":"oranges","price":90,"freq":2},{"name":"beans","price":90,"freq":2},{"name":"mara","price":2250,"freq":1},{"name":"oranges ","price":0,"freq":1},{"name":"78","price":0,"freq":1},{"name":"lime","price":0,"freq":1},{"name":"orange","price":79,"freq":1},{"name":"79","price":0,"freq":1},{"name":"juice","price":57,"freq":1},{"name":"iphone 17","price":200000,"freq":1},{"name":"kjv","price":1200,"freq":1},{"name":"hp laptop","price":52000,"freq":1},{"name":"hghghj","price":89,"freq":1},{"name":"90","price":90,"freq":1}]
+[
+  {
+    "name": "oranges",
+    "price": 20,
+    "freq": 4
+  },
+  {
+    "name": "mangoes",
+    "price": 20,
+    "freq": 3
+  },
+  {
+    "name": "nuts",
+    "price": 700,
+    "freq": 1
+  },
+  {
+    "name": "jerry",
+    "price": 200,
+    "freq": 1
+  }
+]

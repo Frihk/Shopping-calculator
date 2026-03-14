@@ -33,4 +33,8 @@ int :-
         - storage:
                 - mysql
 
+mostry handled
+
+The app should also be able to suggest the cheapest supper market a consumer can use. checking the shopping of different suppermarket and return the cheapest.
+
 

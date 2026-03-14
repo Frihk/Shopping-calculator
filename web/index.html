@@ -2,82 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Grocery List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurum Market | Shopping Calculator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Premium Planning</p>
-        <h1>Smart Grocery List</h1>
-        <p class="subtitle">Your personal shopping assistant</p>
+  <div class="glow"></div>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">Aurum Market</span>
+      <span class="brand-sub">Shopping Calculator</span>
+    </div>
+    <div class="tagline">Quiet luxury for everyday shopping.</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <div class="panel-header">
+        <h1>Cart Atelier</h1>
+        <p>Capture purchases with precision, then let the system summarize and learn.</p>
       </div>
-      <div class="hero-glow"></div>
-    </header>
 
-    <main class="content">
-      <section class="list-panel" aria-label="Shopping list">
-        <div class="panel-header">
-          <div>
-            <h2>Shopping List</h2>
-            <p>Stay organized with itemized totals.</p>
-          </div>
-          <div class="search">
-            <label class="sr-only" for="search">Search items</label>
-            <input id="search" type="search" placeholder="Search items" />
-          </div>
+      <form id="item-form" class="form-grid" autocomplete="off">
+        <label class="field">
+          <span>Item name</span>
+          <input id="item-name" name="item-name" type="text" placeholder="e.g. Almonds" required />
+        </label>
+        <label class="field">
+          <span>Quantity</span>
+          <input id="item-qty" name="item-qty" type="number" min="1" step="1" value="1" required />
+        </label>
+        <label class="field">
+          <span>Price per item</span>
+          <input id="item-price" name="item-price" type="number" min="0.01" step="0.01" placeholder="0.00" required />
+        </label>
+        <div class="actions">
+          <button class="btn primary" type="submit">Add to list</button>
+          <button class="btn ghost" type="button" id="clear-items">Clear list</button>
         </div>
+      </form>
 
-        <div class="list-head">
+      <div class="list-panel">
+        <div class="list-header">
           <span>Item</span>
           <span>Qty</span>
           <span>Price</span>
-          <span>Total</span>
+          <span>Line total</span>
+          <span></span>
         </div>
-
-        <div id="list" class="list"></div>
-
-        <button id="add-item" class="btn btn-ghost" type="button">+ Add Item</button>
-
-        <div class="bottom-actions">
-          <div class="total-display">
-            <span>Total Cost</span>
-            <strong id="grand-total">$0.00</strong>
-          </div>
-          <div class="action-buttons">
-            <button id="done" class="btn btn-primary" type="button">Done Shopping</button>
-            <button id="edit" class="btn btn-secondary" type="button" hidden>Edit List</button>
-          </div>
+        <div id="items-list" class="list-body">
+          <div class="list-empty">No items yet. Add your first item to begin.</div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <aside class="suggestions" aria-label="Suggestions">
-        <h2>Suggestions for You</h2>
-        <p>Tap to add essentials to your list.</p>
-        <div class="suggestion-list">
-          <div class="suggestion-card">
-            <span>Apples</span>
-            <button class="btn btn-mini" type="button" data-item="Apples">+ Add</button>
-          </div>
-          <div class="suggestion-card">
-            <span>Yogurt</span>
-            <button class="btn btn-mini" type="button" data-item="Yogurt">+ Add</button>
-          </div>
-          <div class="suggestion-card">
-            <span>Butter</span>
-            <button class="btn btn-mini" type="button" data-item="Butter">+ Add</button>
-          </div>
-          <div class="suggestion-card">
-            <span>Eggs</span>
-            <button class="btn btn-mini" type="button" data-item="Eggs">+ Add</button>
-          </div>
+    <section class="panel summary-panel">
+      <div class="panel-header">
+        <h2>Totals & Insights</h2>
+        <p>Finalize to save to history and refresh smart suggestions.</p>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span>Total quantity</span>
+          <strong id="total-qty">0</strong>
         </div>
-      </aside>
-    </main>
-  </div>
+        <div class="metric">
+          <span>Total cost</span>
+          <strong id="total-cost">0.00</strong>
+        </div>
+      </div>
 
-  <script src="script.js"></script>
+      <button id="checkout" class="btn primary wide">Finalize & Save</button>
+      <div id="status" class="status">Backend status: waiting.</div>
+
+      <div class="suggestions">
+        <h3>Suggestions</h3>
+        <p class="hint">Based on previous purchases.</p>
+        <div id="suggestions-list" class="suggestions-list">
+          <div class="list-empty">No suggestions yet.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Shopping Calculator • Crafted for calm, accurate checkout.</span>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
